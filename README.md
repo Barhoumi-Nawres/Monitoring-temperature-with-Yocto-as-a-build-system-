@@ -3,7 +3,7 @@ this project is about monitoring temperature  using raspberryPI3B+ with DHT11 se
 # BSP (board support package ) 
 we need to add a layer to support raspberry(meta-raspberry)
 
-## about recipe virtaul/kernel
+## About recipe virtual/kernel
 
 
 ## ...
