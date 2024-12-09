@@ -29,8 +29,7 @@ git config --global http.postBuffer 157286400
 
 
 # Copy the iamge in SD card 
-
-first you nedd to Identify the SD Card Device using the flowing command linux :
+First, you need to identify the SD card device using the following command in Linux:
 
 
 ```bash
