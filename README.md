@@ -1,39 +1,64 @@
-# Monitoring-temperature-with-Yocto-as-a-build-system-
-this project is about monitoring temperature  using raspberryPI3B+ with DHT11 sensor  ,i'am using Yocto project as abuild system to customize the development environment .
-# BSP (board support package ) 
-we need to add a layer to support raspberry(meta-raspberry)
 
-## About recipe virtual/kernel
+# Monitoring Temperature with Yocto as a Build System
 
+This project is about monitoring temperature using a Raspberry Pi 3B+ with a DHT11 sensor. I'm using the Yocto Project as a build system to customize the development environment.
 
+## BSP (Board Support Package)
 
-git config --global http.postBuffer 157286400
-(/ 1.   But : Augmenter la taille du tampon utilisé par Git lors des transferts HTTP.
-    Effet : Permet de télécharger ou envoyer de plus gros fichiers en une seule fois (ici, 150 Mo).
+We need to add a layer to support the Raspberry Pi (\`meta-raspberry\`).
 
-2. git config --global pack.window 1
+## About Recipe: virtual/kernel
 
-    But : Réduire la taille de la fenêtre de compression des fichiers dans Git.
-    Effet : Git va utiliser moins de mémoire pour compresser les fichiers, ce qui peut améliorer les performances sur certains systèmes.
+### Git Configuration for Large File Transfers
 
-3. git config --global core.compression 0
+To enhance Git's performance with large file transfers, use the following commands:
 
-    But : Désactiver la compression des fichiers dans Git.
-    Effet : Accélère les opérations Git en réduisant l'utilisation du processeur, mais utilise plus d'espace disque.
+1. **Increase the buffer size used by Git for HTTP transfers**:
 
-4. bitbake virtual/kernel -c do_fetch
+    ```bash
+    git config --global http.postBuffer 157286400
+    ```
 
-    But : Télécharger les sources nécessaires pour le noyau Linux dans un projet Yocto.
-    Effet : Télécharge les fichiers nécessaires pour construire le noyau.
-)
+    This allows Git to send or receive larger files in one go (up to 150 MB).
 
+2. **Reduce the compression window size**:
 
-# Copy the iamge in SD card 
-First, you need to identify the SD card device using the following command in Linux:
+    ```bash
+   
+    git config --global pack.window 1
+   
+    ```
 
+    This reduces the memory usage during compression, potentially improving performance on some systems.
+
+4. **Disable file compression in Git**:
+
+    ```bash
+    git config --global core.compression 0
+    ```
+
+    This disables file compression, speeding up Git operations but using more disk space.
+
+5. **Fetch kernel sources using Bitbake**:
+
+    ```bash
+    bitbake virtual/kernel -c do_fetch
+    ```
+
+    This command downloads the necessary files to build the Linux kernel in a Yocto project.
+
+## Copy the Image to the SD Card
+
+First, identify the SD card device by running:
 
 ```bash
 lsblk
+```
 
+Next, use \`dd\` to write the image to the SD card:
 
+```bash
+sudo dd if=core-image-minimal-raspberrypi3.rpi-sdimg of=/dev/sdb bs=4M status=progress conv=fsync
+```
 
+This will copy the Yocto image to the SD card.
