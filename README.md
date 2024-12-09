@@ -26,3 +26,9 @@ git config --global http.postBuffer 157286400
     But : Télécharger les sources nécessaires pour le noyau Linux dans un projet Yocto.
     Effet : Télécharge les fichiers nécessaires pour construire le noyau.
 )
+
+
+## copy the iamge in SD card 
+
+first you nedd to Identify the SD Card Device using the flowing command linux :
+
