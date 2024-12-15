@@ -66,7 +66,7 @@ lsblk
 Next, use \`dd\` to write the image to the SD card:
 
 ```bash
-sudo dd if=core-image-minimal-raspberrypi3.rpi-sdimg of=/dev/sdb bs=4M status=progress conv=fsync
+sudo dd if=core-image-minimal-raspberrypi3.wic.bz2 of=/dev/sdb bs=4M status=progress conv=fsync
 ```
 
 This will copy the Yocto image to the SD card.
