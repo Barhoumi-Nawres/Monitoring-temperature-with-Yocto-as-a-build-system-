@@ -14,7 +14,7 @@ We need to add a layer to support the Raspberry Pi (\`meta-raspberry\`).
 When attempting to fetch kernel sources for the virtual/kernel recipe in a Yocto build environment, the do_fetch task fails. 
 The following error is observed:
 
-<img src="virtaul-kernal.jpg" alt="error about virtaul/kernel" width="500" height="600" >
+<img src="linux-kernal.png" alt="error about virtaul/kernel" width="900" height="400" >
 
 ### Solution:
 To address the issue and ensure the successful fetching of the kernel sources, follow these steps:
