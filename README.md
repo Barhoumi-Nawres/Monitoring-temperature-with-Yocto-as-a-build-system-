@@ -63,7 +63,7 @@ First, identify the SD card device by running:
 lsblk
 ```
 
-umount the partition :
+umount the partitions :
 
 ```bash
 sudo umount /dev/sdX
