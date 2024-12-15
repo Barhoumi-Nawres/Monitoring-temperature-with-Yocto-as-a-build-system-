@@ -8,10 +8,17 @@ This project is about monitoring temperature using a Raspberry Pi 3B+ with a DHT
 We need to add a layer to support the Raspberry Pi (\`meta-raspberry\`).
 
 ## About Recipe: virtual/kernel
+### Issue: Fetching Kernel Sources Fails in Yocto Recipe
 
-### Git Configuration for Large File Transfers
+### Problem Description:
+When attempting to fetch kernel sources for the virtual/kernel recipe in a Yocto build environment, the do_fetch task fails. 
+The following error is observed:
 
-To enhance Git's performance with large file transfers, use the following commands:
+<img src="virtaul-kernal.jpg" alt="error about virtaul/kernel" width="500" height="600" >
+
+### Solution:
+To address the issue and ensure the successful fetching of the kernel sources, follow these steps:
+
 
 1. **Increase the buffer size used by Git for HTTP transfers**:
 
@@ -46,6 +53,7 @@ To enhance Git's performance with large file transfers, use the following comman
     ```
 
     This command downloads the necessary files to build the Linux kernel in a Yocto project.
+   
 
 ## Copy the Image to the SD Card
 
