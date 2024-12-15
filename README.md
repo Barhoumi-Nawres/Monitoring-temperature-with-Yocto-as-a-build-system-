@@ -63,6 +63,12 @@ First, identify the SD card device by running:
 lsblk
 ```
 
+umount the partition :
+
+```bash
+sudo umount /dev/sdX
+```
+
 Next, use \`dd\` to write the image to the SD card:
 
 ```bash
