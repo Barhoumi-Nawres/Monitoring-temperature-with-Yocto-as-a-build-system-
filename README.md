@@ -2,6 +2,25 @@
 # Monitoring Temperature with Yocto as a Build System
 
 This project is about monitoring temperature using a Raspberry Pi 3B+ with a DHT11 sensor. I'm using the Yocto Project as a build system to customize the development environment.
+## .
+when we use yocto as a build system :there is something important we need to know it is the Architecture of our target Machine :
+first i want to explain the difference beetwen native compiler and the cross-compiler 
+## Native_Compiler -vs-Cross_Compiler 
+## Toolchain :
+C building process (Preprocessing + Compiler +bAssembler + Linker) + C standerd Libraries (stdio.h ,math.h ..etc )+Bin utils + ....
+
+### Host machine :
+for building process 
+### Target machine :
+for run the executable code (machine code )
+
+ ## cross Compiler :
+ if you intend to write a C program that is compiled on a certain host system but must execute on another target system ,then you need to compile it with what's 
+ known as a cross compiler or cross toolchain :for example when we have host machine X86-64 (our computer ) and our target is ARM architecture (example :raspbeerypi X)
+
+ ## Native Compiler :
+ A native compiler is a type of compiler that generates executable code for the same architecture or platform on which it runs.
+ 
 
 ## BSP (Board Support Package)
 You will need a BSP layer to support the Raspberry Pi boards. 
