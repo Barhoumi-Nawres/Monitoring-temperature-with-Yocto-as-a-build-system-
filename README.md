@@ -4,8 +4,14 @@
 This project is about monitoring temperature using a Raspberry Pi 3B+ with a DHT11 sensor. I'm using the Yocto Project as a build system to customize the development environment.
 
 ## BSP (Board Support Package)
+You will need a BSP layer to support the Raspberry Pi boards. 
+So Yocto Project is providing a meta-raspberrypi layer that contains information related to raspberry pi boards that are required during the build.
+so you need to download meta-raspberrypi layer from the poky directory using the flowing command :
 
-We need to add a layer to support the Raspberry Pi (\`meta-raspberry\`).
+
+    ```
+    $ git clone https://git.yoctoproject.org/meta-raspberrypi -b dunfell
+    ```
 
 ## About Recipe: virtual/kernel
 ### Issue: Fetching Kernel Sources Fails in Yocto Recipe
