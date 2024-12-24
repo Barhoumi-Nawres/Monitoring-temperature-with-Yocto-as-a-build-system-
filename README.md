@@ -33,11 +33,13 @@ so you need to download meta-raspberrypi layer from the poky directory using the
     ```
 ## Configuration file :
 ### Local.conf :
+Configures build-specific parameters like machine, distro ..etc .
  ```
     Machine =raspberrypi3
  ```
 
 ### bblayers.conf :
+Specifies which layers to include in the build.
  ```
     meta-openembedded/meta-networking
           "/meta-oe
