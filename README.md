@@ -35,14 +35,15 @@ so you need to download meta-raspberrypi layer from the poky directory using the
 ### Local.conf :
  ```
     Machine =raspberrypi3
-    ```
+ ```
 
 ### bblayers.conf :
  ```
     meta-openembedded/meta-networking
           "/meta-oe
-          "/meta-python 
- ```
+          "/meta-python
+```
+
 
 ## About Recipe: virtual/kernel
 ### Issue: Fetching Kernel Sources Fails in Yocto Recipe
