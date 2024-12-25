@@ -94,6 +94,20 @@ To address the issue and ensure the successful fetching of the kernel sources, f
 
     This command downloads the necessary files to build the Linux kernel in a Yocto project.
    
+### set an ip address static in a linux image developed in yocto?
+there is a several ways to test your  image (using cable ethernet ,UART protocol .....etc ) ,but in our case  we have Ethernet cable so we need set an IP static adress and to connect with our board over SSH (Secure shell )protocol .
+so we need to create a layer meta-custom in this type :
+*** To automatically set a static IP in the built image, using systemd-networkd:
+```bash
+meta-custom
+    |_ recipes-core
+         |_ systemd
+              |_ systemd_%.bbappend
+         |_ files
+              |_ <iface>.link
+              |_ <iface>.network
+```
+For <iface> you have to set the interface to be configured by systemd-networkd, for example eth0, wlan0, ...
 
 ## Copy the Image to the SD Card
 
