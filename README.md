@@ -109,7 +109,7 @@ meta-custom
 ```
 For <iface> you have to set the interface to be configured by systemd-networkd, for example eth0, wlan0, ...
 
-And then we need to create a user manually,
+And then we need to create a user manually for raspberry pi ,
 
 ## Copy the Image to the SD Card
 
