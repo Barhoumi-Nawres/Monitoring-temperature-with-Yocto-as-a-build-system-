@@ -10,9 +10,9 @@ first i want to explain the difference beetwen native compiler and the cross-com
 C building process (Preprocessing + Compiler +bAssembler + Linker) + C standerd Libraries (stdio.h ,math.h ..etc )+Bin utils + ....
 
 ### Host machine :
-for building process 
+for building process (in our case we have X86-64 erchitecture )
 ### Target machine :
-for run the executable code (machine code )
+for run the executable code (machine code )((in our case we have ARM  erchitecture  for raspberrypi3B+ ).
 
  ## cross Compiler :
  if you intend to write a C program that is compiled on a certain host system but must execute on another target system ,then you need to compile it with what's 
@@ -41,9 +41,10 @@ Configures build-specific parameters like machine, distro ..etc .
 ### bblayers.conf :
 Specifies which layers to include in the build.
  ```
-    meta-openembedded/meta-networking
-          "/meta-oe
-          "/meta-python
+    meta-openembedded/meta-networking \
+          "/meta-oe \
+          "/meta-python \
+    meta-raspberrypi \
 ```
 
 
