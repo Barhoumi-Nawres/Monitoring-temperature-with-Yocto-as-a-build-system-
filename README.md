@@ -140,3 +140,19 @@ put your SD card  in your board  and and use the following command :
 ssh pi@192.168.0.10
 ```
 make sure that you set user and password  for raspberry pi  and add SSH protocol in your image .
+there are two options to add SSH in your but for me i used this ,because the first one doesn't work :
+
+```bash
+# local.conf
+EXTRA_IMAGE_FEATURES += "ssh-server-dropbear"
+```
+A more permanent solution is to define a custom image recipe:
+```bash
+# my-custom-image.bb
+require core-image-minimal.bb
+
+DESCRIPTION = "A small image with a SSH server for remote access"
+
+IMAGE_FEATURES += "ssh-server-dropbear"
+
+```
