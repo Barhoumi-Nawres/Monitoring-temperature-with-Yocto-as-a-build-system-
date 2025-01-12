@@ -129,7 +129,8 @@ sudo umount /dev/sdX
 Next, use \`dd\` to write the image to the SD card:
 
 ```bash
-sudo dd if=core-image-minimal-raspberrypi3.wic.bz2 of=/dev/sdb bs=4M status=progress conv=fsync
+bzcat core-image-minimal-raspberrypi3-20250112155804.rootfs.wic.bz2 | sudo dd of=/dev/sdb bs=4M status=progress
+
 ```
 
 This will copy the Yocto image to the SD card.
