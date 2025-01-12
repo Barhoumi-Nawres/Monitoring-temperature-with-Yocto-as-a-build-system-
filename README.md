@@ -134,3 +134,9 @@ bzcat core-image-minimal-raspberrypi3-20250112155804.rootfs.wic.bz2 | sudo dd of
 ```
 
 This will copy the Yocto image to the SD card.
+put your SD card  in your board  and and use the following command :
+
+```bash
+ssh pi@192.168.0.10
+```
+make sure that you set user and password  for raspberry pi  and add SSH protocol in your image .
